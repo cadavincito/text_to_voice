@@ -54,7 +54,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Título de la app
-st.title("Interfaz texto a voz")
+st.title("🎤 Text-to-Voice Interface")
 
 st.markdown("---")
 
