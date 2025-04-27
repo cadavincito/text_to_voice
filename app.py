@@ -3,16 +3,62 @@ from gtts import gTTS
 import base64
 import os
 
+# Estilos personalizados
+st.markdown("""
+    <style>
+    body {
+        background-color: #121212;
+        color: white;
+    }
+    .stApp {
+        background-color: #121212;
+        color: white;
+        text-align: center;
+    }
+    h1, h2, h3, h4, h5, h6, p, label, div {
+        color: white;
+        text-align: center;
+    }
+    .stTextInput input {
+        text-align: center;
+    }
+    .stSelectbox div {
+        text-align: center;
+    }
+    .stButton button {
+        background-color: #1f77b4;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        width: 50%;
+        margin: auto;
+        display: block;
+    }
+    .stButton button:hover {
+        background-color: #3aa0ff;
+    }
+    a {
+        color: #1f77b4;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Título de la app
-st.title("🎤 Text-to-Voice Interface")
+st.title("Interfaz texto a voz")
 
-st.markdown("---")  # Línea divisoria
+st.markdown("---")
 
-# Texto de entrada
+# Entrada de texto
 st.write("### ✍️ Escribe el texto:")
 texto = st.text_input("", "Este es un texto de ejemplo")
 
-st.write("")  # Espacio en blanco
+st.write("")  # Espacio extra
 
 # Selección de idioma
 st.write("### 🌎 Selecciona un idioma:")
@@ -25,7 +71,6 @@ languages = {
 }
 selected_language = st.selectbox("", list(languages.keys()))
 
-st.write("")  # Espacio en blanco
 st.write("")  # Más espacio
 
 # Botón de conversión
@@ -33,16 +78,13 @@ if st.button("🔊 Convertir a voz"):
     if texto.strip() == "":
         st.warning("⚠️ Por favor, escribe algo para convertir a voz.")
     else:
-        # Convertir texto a voz
         tts = gTTS(text=texto, lang=languages[selected_language], slow=False)
         tts.save("output.mp3")
 
-        st.write("")  # Espacio en blanco
-
-        # Reproducir el audio
+        st.write("")
         st.audio("output.mp3")
 
-        st.write("")  # Espacio en blanco
+        st.write("")
 
         # Link de descarga
         with open("output.mp3", "rb") as file:
@@ -51,5 +93,4 @@ if st.button("🔊 Convertir a voz"):
         href = f'<a href="data:audio/mp3;base64,{b64}" download="output.mp3">📥 Descargar archivo de audio</a>'
         st.markdown(href, unsafe_allow_html=True)
 
-        # Borrar el archivo generado
         os.remove("output.mp3")
