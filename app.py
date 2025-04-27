@@ -6,33 +6,32 @@ import os
 # Estilos personalizados
 st.markdown("""
     <style>
-    /* Fondo oscuro y textos blancos */
+    /* Fondo rojo y textos negros */
     body {
-        background-color: #121212;
-        color: white;
+        background-color: #ff4d4d;
+        color: black;
     }
     .stApp {
-        background-color: #121212;
-        color: white;
+        background-color: #ff4d4d;
+        color: black;
         text-align: center;
     }
     h1, h2, h3, h4, h5, h6, p, label, div {
-        color: white;
+        color: black;
         text-align: center;
     }
     .stTextInput input {
         text-align: center;
-        background-color: #1e1e1e;
-        color: white;
+        background-color: white;
+        color: black;
         border-radius: 8px;
     }
-    /* Corrección real para el selectbox */
     .stSelectbox > div {
         background-color: white;
         border-radius: 8px;
     }
     .stSelectbox label {
-        color: white !important;
+        color: black !important;
         text-align: center;
     }
     .stSelectbox div[data-baseweb="select"] {
@@ -46,9 +45,8 @@ st.markdown("""
         background-color: white !important;
         text-align: center;
     }
-    /* Botón de convertir */
     .stButton button {
-        background-color: #1f77b4;
+        background-color: black;
         color: white;
         font-weight: bold;
         border-radius: 8px;
@@ -57,10 +55,10 @@ st.markdown("""
         display: block;
     }
     .stButton button:hover {
-        background-color: #3aa0ff;
+        background-color: #333333;
     }
     a {
-        color: #1f77b4;
+        color: black;
         font-weight: bold;
         text-decoration: none;
         font-size: 18px;
@@ -72,7 +70,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Título de la app
-st.title("🎤 Text-to-Voice Interface")
+st.title("Interfaz texto a voz")
 
 st.markdown("---")
 
