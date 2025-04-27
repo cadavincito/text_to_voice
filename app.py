@@ -22,8 +22,12 @@ st.markdown("""
     .stTextInput input {
         text-align: center;
     }
-    .stSelectbox div {
+    /* Estilo especial para el Selectbox */
+    .stSelectbox select {
+        background-color: white;
+        color: black;
         text-align: center;
+        font-weight: bold;
     }
     .stButton button {
         background-color: #1f77b4;
