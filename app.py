@@ -6,6 +6,7 @@ import os
 # Estilos personalizados
 st.markdown("""
     <style>
+    /* Fondo oscuro y textos blancos */
     body {
         background-color: #121212;
         color: white;
@@ -21,14 +22,31 @@ st.markdown("""
     }
     .stTextInput input {
         text-align: center;
+        background-color: #1e1e1e;
+        color: white;
+        border-radius: 8px;
     }
-    /* Estilo especial para el Selectbox */
-    .stSelectbox select {
+    /* Corrección real para el selectbox */
+    .stSelectbox > div {
+        background-color: white;
+        border-radius: 8px;
+    }
+    .stSelectbox label {
+        color: white !important;
+        text-align: center;
+    }
+    .stSelectbox div[data-baseweb="select"] {
         background-color: white;
         color: black;
         text-align: center;
-        font-weight: bold;
+        border-radius: 8px;
     }
+    .stSelectbox div[data-baseweb="select"] * {
+        color: black !important;
+        background-color: white !important;
+        text-align: center;
+    }
+    /* Botón de convertir */
     .stButton button {
         background-color: #1f77b4;
         color: white;
