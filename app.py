@@ -9,6 +9,7 @@ st.markdown("""
     .main {
         background-color: #f0f2f6;
         padding: 2rem;
+        margin: 2rem;
         border-radius: 10px;
     }
     h1 {
